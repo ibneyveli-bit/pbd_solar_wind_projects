@@ -1,0 +1,10 @@
+Please add battery_storage.jpg to this directory.
+
+The BESS card is configured to show a background image, but the file is missing.
+
+To fix this:
+1. Add your battery storage container image here as "battery_storage.jpg"
+2. Run: flutter clean && flutter pub get
+3. The BESS card will then show the background image
+
+Until then, the BESS card will show with a green gradient background.

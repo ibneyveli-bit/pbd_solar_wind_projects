@@ -1,0 +1,15 @@
+{
+    "dart.flutterSdkPath": "",
+    "dart.projectSearchDepth": 5,
+    "dart.enableSdkFormatter": true,
+    "dart.lineLength": 120,
+    "dart.insertArgumentPlaceholders": false,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    }
+}

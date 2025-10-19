@@ -1,0 +1,128 @@
+Analyzing pbd_solar_wind_projects...                            
+
+   info • Invalid use of a private type in a public API • lib/main.dart:35:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/main.dart:88:15 • avoid_print
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:114:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:114:92 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:129:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:132:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:203:62 • deprecated_member_use
+   info • Unnecessary instance of 'Container' • lib/main.dart:332:12 • avoid_unnecessary_containers
+   info • Invalid use of a private type in a public API • lib/main.dart:392:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:454:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:456:63 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:501:51 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:536:53 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:565:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:745:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:745:72 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:797:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:962:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:962:72 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:1004:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1184:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1184:72 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:1221:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/main.dart:1339:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1347:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1353:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1358:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1363:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1368:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1371:13 • avoid_print
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1382:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1387:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1394:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1408:98 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:1425:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1444:59 • deprecated_member_use
+   info • Don't invoke 'print' in production code • lib/main.dart:1591:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1614:13 • avoid_print
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1618:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1623:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1630:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1644:88 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:1665:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/main.dart:1754:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:1777:13 • avoid_print
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1781:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1786:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1793:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:1807:88 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main.dart:1843:3 • library_private_types_in_public_api
+warning • The value of the local variable 'index' isn't used • lib/main.dart:1925:31 • unused_local_variable
+   info • Invalid use of a private type in a public API • lib/main.dart:2201:3 • library_private_types_in_public_api
+warning • The declaration '_removeRow' isn't referenced • lib/main.dart:2256:8 • unused_element
+warning • The declaration '_updateCell' isn't referenced • lib/main.dart:2262:8 • unused_element
+  error • Undefined name 'success' • lib/main.dart:2270:23 • undefined_identifier
+  error • Undefined name 'success' • lib/main.dart:2271:26 • undefined_identifier
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2294:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2313:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2366:61 • deprecated_member_use
+  error • The named parameter 'rows' is required, but there's no corresponding argument • lib/main.dart:2384:30 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 2 found • lib/main.dart:2416:27 • extra_positional_arguments_could_be_named
+  error • Expected to find ',' • lib/main.dart:2416:31 • expected_token
+  error • Undefined name 'index' • lib/main.dart:2416:31 • undefined_identifier
+  error • Undefined name 'entry' • lib/main.dart:2416:39 • undefined_identifier
+  error • Expected to find ')' • lib/main.dart:2416:48 • expected_token
+  error • The method 'toList' isn't defined for the type 'DataTable' • lib/main.dart:2471:28 • undefined_method
+  error • Expected an identifier • lib/main.dart:2473:21 • missing_identifier
+  error • Expected to find ']' • lib/main.dart:2473:21 • expected_token
+   info • Invalid use of a private type in a public API • lib/main.dart:2511:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2589:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2642:61 • deprecated_member_use
+  error • The named parameter 'rows' is required, but there's no corresponding argument • lib/main.dart:2654:30 • missing_required_argument
+  error • Unexpected text 'return' • lib/main.dart:2678:27 • unexpected_token
+  error • Too many positional arguments: 0 expected, but 1 found • lib/main.dart:2678:34 • extra_positional_arguments_could_be_named
+  error • Undefined name 'row' • lib/main.dart:2685:37 • undefined_identifier
+  error • Undefined name 'row' • lib/main.dart:2694:47 • undefined_identifier
+  error • Expected to find ')' • lib/main.dart:2698:28 • expected_token
+  error • The method 'toList' isn't defined for the type 'DataTable' • lib/main.dart:2699:28 • undefined_method
+  error • Expected an identifier • lib/main.dart:2701:21 • missing_identifier
+  error • Expected to find ']' • lib/main.dart:2701:21 • expected_token
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2729:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:2878:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main.dart:3027:59 • deprecated_member_use
+   info • The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/main_backup_20250928_002951.dart:2:8 • unnecessary_import
+   info • Invalid use of a private type in a public API • lib/main_backup_20250928_002951.dart:31:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:112:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:114:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:130:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:134:51 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:217:62 • deprecated_member_use
+   info • Unnecessary instance of 'Container' • lib/main_backup_20250928_002951.dart:367:12 • avoid_unnecessary_containers
+   info • Invalid use of a private type in a public API • lib/main_backup_20250928_002951.dart:438:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:653:32 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:654:32 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main_backup_20250928_002951.dart:703:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:854:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:866:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:872:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:877:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:882:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:887:29 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main_backup_20250928_002951.dart:890:13 • avoid_print
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:901:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:908:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:916:37 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/main_backup_20250928_002951.dart:944:43 • deprecated_member_use
+   info • Invalid use of a private type in a public API • lib/main_backup_20250928_002951.dart:986:3 • library_private_types_in_public_api
+warning • The value of the local variable 'index' isn't used • lib/main_backup_20250928_002951.dart:1070:31 • unused_local_variable
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:76:9 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:78:9 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:92:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:110:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:132:9 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:135:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:204:9 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:207:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:223:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:225:11 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:229:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:245:9 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:248:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:269:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:277:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:280:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/project_data_manager.dart:290:5 • avoid_print
+

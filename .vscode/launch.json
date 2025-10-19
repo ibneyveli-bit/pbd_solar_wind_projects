@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pbd_solar_wind_projects",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "9764E4E5-EFE9-4C61-B216-334A4EFC8BC4"
+        },
+        {
+            "name": "pbd_solar_wind_projects (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main.dart",
+            "deviceId": "9764E4E5-EFE9-4C61-B216-334A4EFC8BC4"
+        },
+        {
+            "name": "pbd_solar_wind_projects (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/main.dart",
+            "deviceId": "9764E4E5-EFE9-4C61-B216-334A4EFC8BC4"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "742127630159",
+    "project_id": "pbd--projects-app",
+    "storage_bucket": "pbd--projects-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742127630159:android:be1c1169eb8866e635f73a",
+        "android_client_info": {
+          "package_name": "com.example.pbd_solar_wind_projects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd9WVXX64PPQUW3ygufSPjDlZdGcFFJgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

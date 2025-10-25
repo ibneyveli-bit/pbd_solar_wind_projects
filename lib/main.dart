@@ -2608,36 +2608,37 @@ class LocationInfrastructureScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.teal.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.construction, size: 60, color: Colors.teal.shade300),
-              SizedBox(height: 10),
+              Icon(Icons.construction, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Erection and Commissioning',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Construction & Commissioning Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.teal.shade200),
-                ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  'Add erection and commissioning details including construction phases, installation procedures, testing protocols, commissioning schedules, and project milestone information for the Tamil Nadu BESS project.',
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -2673,36 +2674,37 @@ class InvestmentTimelineScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.settings, size: 60, color: Colors.purple.shade300),
-              SizedBox(height: 10),
+              Icon(Icons.settings, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Operation & Maintenance',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'O&M Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.purple.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.purple.shade200),
-                ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  'Add operation and maintenance details including maintenance schedules, operational procedures, performance monitoring, preventive maintenance plans, and long-term operation strategies for the Tamil Nadu BESS project.',
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -2723,7 +2725,6 @@ class _AdminProjectOverviewScreenState extends State<AdminProjectOverviewScreen>
   String selectedLocation = 'Project Overview';
   final ProjectDataManager _dataManager = ProjectDataManager();
   bool _isLoading = false; // Start with false to show content immediately
-  bool _isEditMode = false; // Track edit mode state
 
   // Cache for TextEditingControllers to prevent rebuilds
   final Map<String, TextEditingController> _controllers = {};
@@ -2985,43 +2986,38 @@ class _AdminProjectOverviewScreenState extends State<AdminProjectOverviewScreen>
                         Expanded(
                           child: ElevatedButton.icon(
                             onPressed: () {
-                              setState(() {
-                                _isEditMode = !_isEditMode;
-                              });
-                              if (!_isEditMode) {
-                                // Save changes when exiting edit mode
-                                _dataManager.saveData();
-                                ScaffoldMessenger.of(
-                                  context,
-                                ).showSnackBar(SnackBar(content: Text('Changes saved successfully!')));
-                              }
+                              _dataManager.saveData();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Changes saved successfully!'),
+                                  backgroundColor: Colors.green,
+                                ),
+                              );
                             },
-                            icon: Icon(_isEditMode ? Icons.save : Icons.edit),
-                            label: Text(_isEditMode ? 'Save Changes' : 'Edit Data'),
+                            icon: Icon(Icons.save),
+                            label: Text('Save'),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: _isEditMode ? Colors.green.shade600 : Colors.red.shade700,
+                              backgroundColor: Colors.green.shade600,
                               foregroundColor: Colors.white,
                               padding: EdgeInsets.symmetric(vertical: 16),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),
                           ),
                         ),
-                        if (!_isEditMode) ...[
-                          SizedBox(width: 8),
-                          Expanded(
-                            child: ElevatedButton.icon(
-                              onPressed: _addNewDataRow,
-                              icon: Icon(Icons.add),
-                              label: Text('Add New'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.blue.shade600,
-                                foregroundColor: Colors.white,
-                                padding: EdgeInsets.symmetric(vertical: 16),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                              ),
+                        SizedBox(width: 8),
+                        Expanded(
+                          child: ElevatedButton.icon(
+                            onPressed: _addNewDataRow,
+                            icon: Icon(Icons.add),
+                            label: Text('Add New'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue.shade600,
+                              foregroundColor: Colors.white,
+                              padding: EdgeInsets.symmetric(vertical: 16),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),
                           ),
-                        ],
+                        ),
                       ],
                     ),
                   ),
@@ -3049,131 +3045,77 @@ class _AdminProjectOverviewScreenState extends State<AdminProjectOverviewScreen>
     return data ?? [];
   }
 
-  // Build editable data table for admin mode
+  // Build editable data list for admin mode
   Widget _buildEditableDataTable() {
     final currentData = _getCurrentLocationData();
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 8, offset: Offset(0, 4))],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Table(
-          columnWidths: {0: FlexColumnWidth(1.5), 1: FlexColumnWidth(2.5)},
-          children: [
-            // Table Header
-            TableRow(
-              decoration: BoxDecoration(color: Colors.red.shade700),
+      child: Column(
+        children: currentData.asMap().entries.map((entry) {
+          final index = entry.key;
+          final item = entry.value;
+          final description = item['description'] ?? '';
+          final data = item['data'] ?? '';
+          final isEven = index % 2 == 0;
+
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: isEven ? Colors.grey.shade100 : Colors.white,
+              border: Border(bottom: BorderSide(color: Colors.grey.shade300, width: 0.5)),
+            ),
+            child: Row(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Parameter',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                Expanded(
+                  flex: 2,
+                  child: TextField(
+                    controller: TextEditingController(text: description),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      isDense: true,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    maxLines: null,
+                    onChanged: (value) {
+                      _dataManager.updateCell(selectedLocation, index, 'description', value);
+                    },
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Value',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                SizedBox(width: 12),
+                Expanded(
+                  flex: 3,
+                  child: TextField(
+                    controller: TextEditingController(text: data),
+                    style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      isDense: true,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    maxLines: null,
+                    onChanged: (value) {
+                      _dataManager.updateCell(selectedLocation, index, 'data', value);
+                    },
                   ),
+                ),
+                SizedBox(width: 8),
+                IconButton(
+                  icon: Icon(Icons.delete, color: Colors.red.shade700, size: 18),
+                  onPressed: () => _deleteDataItem(index),
+                  padding: EdgeInsets.zero,
+                  constraints: BoxConstraints(),
                 ),
               ],
             ),
-            // Table Rows
-            ...currentData.asMap().entries.map((entry) {
-              final index = entry.key;
-              final item = entry.value;
-              final description = item['description'] ?? '';
-              final data = item['data'] ?? '';
-              final isEven = index % 2 == 0;
-
-              return TableRow(
-                decoration: BoxDecoration(color: isEven ? Colors.grey.shade50 : Colors.white),
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Row(
-                      children: [
-                        Icon(_getIconForDescription(description), color: Colors.red.shade700, size: 18),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: _isEditMode
-                              ? TextField(
-                                  controller: TextEditingController(text: description),
-                                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                                    isDense: true,
-                                  ),
-                                  onChanged: (value) {
-                                    _dataManager.updateCell(selectedLocation, index, 'description', value);
-                                  },
-                                )
-                              : Text(
-                                  description,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.grey.shade800,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 2,
-                                ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(12),
-                    child: _isEditMode
-                        ? TextField(
-                            controller: TextEditingController(text: data),
-                            style: TextStyle(fontSize: 14),
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                              isDense: true,
-                            ),
-                            onChanged: (value) {
-                              _dataManager.updateCell(selectedLocation, index, 'data', value);
-                            },
-                          )
-                        : Text(
-                            data,
-                            style: TextStyle(fontSize: 14, color: Colors.grey.shade700),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                          ),
-                  ),
-                ],
-              );
-            }),
-          ],
-        ),
+          );
+        }).toList(),
       ),
     );
   }
 
-  // Get appropriate icon for description
-  IconData _getIconForDescription(String description) {
-    final desc = description.toLowerCase();
-    if (desc.contains('name') || desc.contains('project')) return Icons.business;
-    if (desc.contains('capacity') || desc.contains('power')) return Icons.battery_charging_full;
-    if (desc.contains('type')) return Icons.category;
-    if (desc.contains('location')) return Icons.location_on;
-    if (desc.contains('status')) return Icons.info;
-    if (desc.contains('phase')) return Icons.timeline;
-    return Icons.data_usage;
-  }
-
-  // Delete data item with confirmation
+// Delete data item with confirmation
   void _deleteDataItem(int index) {
     if (_getCurrentLocationData().length <= 1) {
       ScaffoldMessenger.of(
@@ -3417,94 +3359,52 @@ class _ViewerProjectOverviewScreenState extends State<ViewerProjectOverviewScree
     return data ?? [];
   }
 
-  // Build efficient table view for data
+  // Build efficient list view for data
   Widget _buildDataTable() {
     final currentData = _getCurrentLocationData();
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 8, offset: Offset(0, 4))],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Table(
-          columnWidths: {0: FlexColumnWidth(2), 1: FlexColumnWidth(3)},
-          children: [
-            // Table Header
-            TableRow(
-              decoration: BoxDecoration(color: Colors.green.shade600),
+      child: Column(
+        children: currentData.asMap().entries.map((entry) {
+          final index = entry.key;
+          final item = entry.value;
+          final description = item['description'] ?? '';
+          final data = item['data'] ?? '';
+          final isEven = index % 2 == 0;
+
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: isEven ? Colors.grey.shade100 : Colors.white,
+              border: Border(bottom: BorderSide(color: Colors.grey.shade300, width: 0.5)),
+            ),
+            child: Row(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(12),
+                Expanded(
+                  flex: 2,
                   child: Text(
-                    'Parameter',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                    description,
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(12),
+                SizedBox(width: 12),
+                Expanded(
+                  flex: 3,
                   child: Text(
-                    'Value',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                    data,
+                    style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
                   ),
                 ),
               ],
             ),
-            // Table Rows
-            ...currentData.asMap().entries.map((entry) {
-              final index = entry.key;
-              final item = entry.value;
-              final description = item['description'] ?? '';
-              final data = item['data'] ?? '';
-              final isEven = index % 2 == 0;
-
-              return TableRow(
-                decoration: BoxDecoration(color: isEven ? Colors.grey.shade50 : Colors.white),
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Row(
-                      children: [
-                        Icon(_getIconForDescription(description), color: Colors.green.shade700, size: 18),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            description,
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Text(data, style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),
-                  ),
-                ],
-              );
-            }),
-          ],
-        ),
+          );
+        }).toList(),
       ),
     );
   }
 
-  // Get icon for description (same as admin)
-  IconData _getIconForDescription(String description) {
-    final lowerDesc = description.toLowerCase();
-    if (lowerDesc.contains('name') || lowerDesc.contains('project')) return Icons.business;
-    if (lowerDesc.contains('capacity') || lowerDesc.contains('mw') || lowerDesc.contains('mwh'))
-      return Icons.battery_charging_full;
-    if (lowerDesc.contains('type')) return Icons.category;
-    if (lowerDesc.contains('location') || lowerDesc.contains('site')) return Icons.location_on;
-    if (lowerDesc.contains('status') || lowerDesc.contains('phase')) return Icons.info;
-    return Icons.data_object;
-  }
-
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -3587,8 +3487,26 @@ class _ViewerProjectOverviewScreenState extends State<ViewerProjectOverviewScree
 }
 
 // Admin Technical Specifications Screen
-class AdminTechnicalSpecificationsScreen extends StatelessWidget {
+class AdminTechnicalSpecificationsScreen extends StatefulWidget {
   const AdminTechnicalSpecificationsScreen({super.key});
+
+  @override
+  State<AdminTechnicalSpecificationsScreen> createState() => _AdminTechnicalSpecificationsScreenState();
+}
+
+class _AdminTechnicalSpecificationsScreenState extends State<AdminTechnicalSpecificationsScreen> {
+  final List<Map<String, String>> specifications = [
+    {'parameter': 'Battery Technology', 'value': 'Lithium-ion phosphate (LiFePO4)'},
+    {'parameter': 'Capacity', 'value': '250 MW / 500 MWh'},
+    {'parameter': 'Efficiency', 'value': '95% round-trip efficiency'},
+    {'parameter': 'Discharge Duration', 'value': '2 hours at full capacity'},
+    {'parameter': 'Grid Connection', 'value': '400kV transmission line'},
+    {'parameter': 'Operating Temperature', 'value': '-20°C to +60°C'},
+    {'parameter': 'Lifespan', 'value': '20+ years'},
+    {'parameter': 'Response Time', 'value': '<100ms'},
+    {'parameter': 'Safety Features', 'value': 'Advanced fire suppression system'},
+    {'parameter': 'Compliance', 'value': 'IEC 62619, IEEE 1547'},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -3611,74 +3529,144 @@ class AdminTechnicalSpecificationsScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.red.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Row(
                 children: [
                   Icon(Icons.admin_panel_settings, color: Colors.red.shade700, size: 24),
                   SizedBox(width: 10),
-                  Icon(Icons.engineering, size: 60, color: Colors.orange.shade300),
+                  Icon(Icons.engineering, size: 40, color: Colors.orange.shade300),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Edit Battery Technology',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(height: 10),
-              Text(
-                'Administrator Mode - Technical Specifications',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Edit Battery Technology Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.orange.shade400),
-              ),
-              SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.orange.shade200),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: specifications.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final spec = entry.value;
+                      final isEven = index % 2 == 0;
+
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: isEven ? Colors.grey.shade100 : Colors.white,
+                          border: Border(bottom: BorderSide(color: Colors.grey.shade300, width: 0.5)),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: TextField(
+                                controller: TextEditingController(text: spec['parameter']),
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.zero,
+                                ),
+                                maxLines: null,
+                                onChanged: (value) {
+                                  setState(() {
+                                    specifications[index]['parameter'] = value;
+                                  });
+                                },
+                              ),
+                            ),
+                            SizedBox(width: 12),
+                            Expanded(
+                              flex: 3,
+                              child: TextField(
+                                controller: TextEditingController(text: spec['value']),
+                                style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.zero,
+                                ),
+                                maxLines: null,
+                                onChanged: (value) {
+                                  setState(() {
+                                    specifications[index]['value'] = value;
+                                  });
+                                },
+                              ),
+                            ),
+                            SizedBox(width: 8),
+                            IconButton(
+                              icon: Icon(Icons.delete, color: Colors.red.shade700, size: 18),
+                              onPressed: () {
+                                if (specifications.length > 1) {
+                                  setState(() {
+                                    specifications.removeAt(index);
+                                  });
+                                }
+                              },
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
-                child: TextField(
-                  maxLines: 8,
-                  decoration: InputDecoration(
-                    hintText:
-                        'Enter technical specifications here including battery technology type, capacity details, efficiency ratings, discharge duration, grid connection specifications, and other technical parameters.',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.orange.shade200),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.orange, width: 2),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Technical specifications saved!'), backgroundColor: Colors.green),
+                        );
+                      },
+                      icon: Icon(Icons.save),
+                      label: Text('Save'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green.shade600,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
                     ),
                   ),
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
-                ),
-              ),
-              SizedBox(height: 10),
-              Center(
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Admin: Technical specifications saved!'), backgroundColor: Colors.green),
-                    );
-                  },
-                  icon: Icon(Icons.save),
-                  label: Text('SAVE SPECIFICATIONS'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade600,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        setState(() {
+                          specifications.add({'parameter': 'New Parameter', 'value': 'Enter value'});
+                        });
+                      },
+                      icon: Icon(Icons.add),
+                      label: Text('Add New'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue.shade600,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-              SizedBox(height: 30),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -3691,47 +3679,86 @@ class ViewerTechnicalSpecificationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> specifications = [
+      {'parameter': 'Battery Technology', 'value': 'Lithium-ion phosphate (LiFePO4)'},
+      {'parameter': 'Capacity', 'value': '250 MW / 500 MWh'},
+      {'parameter': 'Efficiency', 'value': '95% round-trip efficiency'},
+      {'parameter': 'Discharge Duration', 'value': '2 hours at full capacity'},
+      {'parameter': 'Grid Connection', 'value': '400kV transmission line'},
+      {'parameter': 'Operating Temperature', 'value': '-20°C to +60°C'},
+      {'parameter': 'Lifespan', 'value': '20+ years'},
+      {'parameter': 'Response Time', 'value': '<100ms'},
+      {'parameter': 'Safety Features', 'value': 'Advanced fire suppression system'},
+      {'parameter': 'Compliance', 'value': 'IEC 62619, IEEE 1547'},
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Technical Specifications'),
         backgroundColor: Colors.orange.shade300,
         foregroundColor: Colors.white,
-        actions: [],
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.green.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(Icons.engineering, size: 60, color: Colors.orange.shade300),
-              SizedBox(height: 10),
-              Text(
-                'Viewer Mode - Technical Specifications',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Icon(Icons.engineering, size: 40, color: Colors.orange.shade300),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Battery Technology Details',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: 10),
-              Text(
-                'Battery Technology Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.orange.shade400),
-              ),
-              SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.orange.shade200),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: specifications.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final spec = entry.value;
+                      final isEven = index % 2 == 0;
+
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: isEven ? Colors.grey.shade100 : Colors.white,
+                          border: Border(bottom: BorderSide(color: Colors.grey.shade300, width: 0.5)),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                spec['parameter'] ?? '',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
+                              ),
+                            ),
+                            SizedBox(width: 12),
+                            Expanded(
+                              flex: 3,
+                              child: Text(
+                                spec['value'] ?? '',
+                                style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
-                child: Text(
-                  'Battery Technology: Lithium-ion phosphate (LiFePO4)\nCapacity: 250 MW / 500 MWh\nEfficiency: 95% round-trip efficiency\nDischarge Duration: 2 hours at full capacity\nGrid Connection: 400kV transmission line\nOperating Temperature: -20°C to +60°C\nLifespan: 20+ years\nResponse Time: <100ms\nSafety Features: Advanced fire suppression system\nCompliance: IEC 62619, IEEE 1547',
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
-                ),
               ),
-              SizedBox(height: 30),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -3763,72 +3790,39 @@ class AdminLocationInfrastructureScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.red.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Icon(Icons.admin_panel_settings, color: Colors.red.shade700, size: 24),
-                  SizedBox(width: 10),
-                  Icon(Icons.construction, size: 60, color: Colors.teal.shade300),
-                ],
-              ),
+              Icon(Icons.admin_panel_settings, color: Colors.red.shade700, size: 40),
               SizedBox(height: 10),
+              Icon(Icons.construction, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Administrator Mode - Erection and Commissioning',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Edit Construction & Commissioning Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.teal.shade200),
-                ),
-                child: TextField(
-                  maxLines: 8,
-                  decoration: InputDecoration(
-                    hintText:
-                        'Enter erection and commissioning details including construction phases, installation procedures, testing protocols, commissioning schedules, and project milestone information for the Tamil Nadu BESS project.',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.teal.shade200),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.teal, width: 2),
-                    ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
                   ),
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 10),
-              Center(
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Admin: Commissioning details saved!'), backgroundColor: Colors.green),
-                    );
-                  },
-                  icon: Icon(Icons.save),
-                  label: Text('SAVE COMMISSIONING DETAILS'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade600,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -3852,36 +3846,37 @@ class ViewerLocationInfrastructureScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.green.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.construction, size: 60, color: Colors.teal.shade300),
-              SizedBox(height: 10),
+              Icon(Icons.construction, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Viewer Mode - Erection and Commissioning',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Construction & Commissioning Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.teal.shade200),
-                ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  'Project Phases:\n\nPhase 1: Site Preparation (Q1 2024)\n- Land acquisition and clearance\n- Environmental impact assessment\n- Grid connection studies\n\nPhase 2: Civil Construction (Q2-Q3 2024)\n- Foundation work for battery containers\n- Power house construction\n- Substation installation\n\nPhase 3: Electrical Installation (Q4 2024)\n- Battery system installation\n- Power conversion system setup\n- Grid interconnection\n\nPhase 4: Testing & Commissioning (Q1 2025)\n- Factory acceptance tests\n- Site acceptance tests\n- Performance validation\n- Commercial operation',
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -3915,72 +3910,39 @@ class AdminInvestmentTimelineScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.red.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Icon(Icons.admin_panel_settings, color: Colors.red.shade700, size: 24),
-                  SizedBox(width: 10),
-                  Icon(Icons.settings, size: 60, color: Colors.purple.shade300),
-                ],
-              ),
+              Icon(Icons.admin_panel_settings, color: Colors.red.shade700, size: 40),
               SizedBox(height: 10),
+              Icon(Icons.settings, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Administrator Mode - Operation & Maintenance',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Edit O&M Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.purple.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.purple.shade200),
-                ),
-                child: TextField(
-                  maxLines: 8,
-                  decoration: InputDecoration(
-                    hintText:
-                        'Enter operation and maintenance details including maintenance schedules, operational procedures, performance monitoring, preventive maintenance plans, and long-term operation strategies for the Tamil Nadu BESS project.',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.purple.shade200),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.purple, width: 2),
-                    ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
                   ),
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 10),
-              Center(
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(
-                      context,
-                    ).showSnackBar(SnackBar(content: Text('Admin: O&M details saved!'), backgroundColor: Colors.green));
-                  },
-                  icon: Icon(Icons.save),
-                  label: Text('SAVE O&M DETAILS'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade600,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -4004,36 +3966,37 @@ class ViewerInvestmentTimelineScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.green.shade50, Colors.white])),
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.settings, size: 60, color: Colors.purple.shade300),
-              SizedBox(height: 10),
+              Icon(Icons.settings, size: 100, color: Colors.orange.shade400),
+              SizedBox(height: 30),
+              Icon(Icons.warning_amber_rounded, size: 60, color: Colors.orange.shade600),
+              SizedBox(height: 20),
               Text(
-                'Viewer Mode - Operation & Maintenance',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.grey.shade800),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'O&M Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.purple.shade400),
+                'PAGE UNDER CONSTRUCTION',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.purple.shade200),
-                ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  'Operation & Maintenance Plan:\n\nDaily Operations:\n- System monitoring 24/7\n- Performance data analysis\n- Real-time fault detection\n\nPreventive Maintenance:\n- Monthly battery health checks\n- Quarterly cooling system service\n- Annual electrical inspections\n\nPredictive Maintenance:\n- Battery degradation monitoring\n- Thermal imaging inspections\n- Vibration analysis\n\nEmergency Response:\n- Fire suppression system monitoring\n- Emergency shutdown procedures\n- Backup power systems\n\nPerformance Optimization:\n- Efficiency tracking\n- Load dispatch optimization\n- Grid support services\n\nLifecycle Management:\n- Battery replacement planning\n- Component upgrade scheduling\n- End-of-life recycling',
-                  style: TextStyle(fontSize: 16, height: 1.5, color: Colors.grey.shade700),
+                  'This page is currently being developed.\nPlease check back later.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 30),
             ],
           ),
         ),
